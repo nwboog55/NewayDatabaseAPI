@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="ISC License (ISCL) Microsoft Public License (Ms-PL)"
+
+[[mods]]
+modId="newaydb"
+version="1.1"
+displayName="NewayDB"
+displayURL="https://nwboog55.github.io/"
+logoFile="logo.png"
+credits="NewayMC Studios"
+authors="NW_Boog55_"
+displayTest="IGNORE_SERVER_VERSION"
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.newaydb]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="AFTER"
+    side="BOTH"
+
+
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

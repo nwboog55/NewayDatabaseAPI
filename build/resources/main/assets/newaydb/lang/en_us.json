@@ -1,0 +1,6 @@
+{
+  "newaydb.player.load": "[NewayDB] Loading player data. Please wait...",
+  "newaydb.server.connect": "[NewayDB] The connection to the server has been successfully established.",
+  "newaydb.server.fail": "[NewayDB] The connection to the server was not established. Error code:",
+  "newaydb.server.update": "[NewayDB] You have an outdated version of the mod installed. Please update to the latest version of the mod."
+}

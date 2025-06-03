@@ -1,2 +1,3 @@
-# NewayDatabaseAPI
-Единая база данных NewayMC Studios
+# NewayDB
+
+Обновлённая система хранения данных игроков
