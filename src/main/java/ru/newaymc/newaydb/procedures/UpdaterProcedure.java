@@ -83,7 +83,7 @@ public class UpdaterProcedure {
 						return null;
 					}
 				}
-			}.createGetRequest("https://nwboog55.github.io/api/1.1.json"))))) {
+			}.createGetRequest("https://nwboog55.github.io/newaydb/api/1.1.json"))))) {
 				NewaydbMod.LOGGER.warn((Component.translatable("newaydb.server.update").getString()));
 				if (entity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("newaydb.server.update"), false);
