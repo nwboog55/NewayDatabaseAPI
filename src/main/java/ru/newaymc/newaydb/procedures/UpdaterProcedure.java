@@ -83,10 +83,10 @@ public class UpdaterProcedure {
 						return null;
 					}
 				}
-			}.createGetRequest("https://nwboog55.github.io/newaydb/api/1.1.json"))))) {
+			}.createGetRequest("https://nwboog55.github.io/newaydb/api/1.2.json"))))) {
 				NewaydbMod.LOGGER.warn((Component.translatable("newaydb.server.update").getString()));
 				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("newaydb.server.update"), false);
+					_player.displayClientMessage(Component.literal((Component.translatable("newaydb.server.update").getString())), false);
 			}
 		} else {
 			NewaydbMod.LOGGER.error((Component.translatable(("newaydb.server.fail" + (new Object() {
@@ -118,3 +118,4 @@ public class UpdaterProcedure {
 		}
 	}
 }
+
