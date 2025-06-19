@@ -38,6 +38,7 @@ public class PlayerSetupProcedure {
 		NewaydbModVariables.NewayDBSettingsJsonObj.addProperty("force-world-save", true);
 		NewaydbModVariables.NewayDBSettingsJsonObj.addProperty("world", "");
 		NewaydbModVariables.NewayDBSettingsJsonObj.addProperty("toggle-backup", true);
+		NewaydbModVariables.NewayDBSettingsJsonObj.addProperty("lang", "en_us");
 		{
 			com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 			try {
