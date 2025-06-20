@@ -48,15 +48,28 @@ public class PlayerLoadLogicProcedure {
 				{
 					Entity _ent = entity;
 					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), ("tp @s " + NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("coordinates").getAsJsonArray()));
+						_ent.getServer().getCommands().performPrefixedCommand(
+								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+										_ent.level().getServer(), _ent),
+								("tp @s " + NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("coordinates-x").getAsDouble() + NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("coordinates-y").getAsDouble()
+										+ NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("coordinates-z").getAsDouble()));
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(
+								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+										_ent.level().getServer(), _ent),
+								("spawnpoint @s " + NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("respawn-coordinates-x").getAsDouble() + NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("respawn-coordinates-y").getAsDouble()
+										+ NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("respawn-coordinates-z").getAsDouble()));
 					}
 				}
 				{
 					Entity _ent = entity;
 					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), ("spawnpoint @s " + NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("respawn-coordinates").getAsJsonArray()));
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), ("gamemode " + NewaydbModVariables.NewayDBPlayerSaveJsonObj.get("gamemode").getAsString()));
 					}
 				}
 				PlayerRemoveLogicProcedure.execute();
@@ -66,4 +79,5 @@ public class PlayerLoadLogicProcedure {
 		}
 	}
 }
+
 

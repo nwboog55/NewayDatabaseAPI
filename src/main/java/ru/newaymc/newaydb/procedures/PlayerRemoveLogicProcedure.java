@@ -7,13 +7,17 @@ import java.io.FileWriter;
 
 public class PlayerRemoveLogicProcedure {
     public static void execute() {
-        NewaydbModVariables.NewayDBPlayerCoordinatesJsonArray = new com.google.gson.JsonArray();
-        NewaydbModVariables.NewayDBPlayerSpawnCoordinatesJsonArray = new com.google.gson.JsonArray();
         NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("nickname");
         NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("uuid");
         NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("save-time");
-        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("coordinates");
-        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("respawn-coordinates");
+        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("gamemode");
+        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("saturation-level");
+        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("coordinates-x");
+        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("coordinates-y");
+        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("coordinates-z");
+        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("respawn-coordinates-x");
+        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("respawn-coordinates-y");
+        NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("respawn-coordinates-z");
         NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("exp-level");
         NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("health-level");
         NewaydbModVariables.NewayDBPlayerSaveJsonObj.remove("max-health-level");
@@ -31,3 +35,4 @@ public class PlayerRemoveLogicProcedure {
         }
     }
 }
+

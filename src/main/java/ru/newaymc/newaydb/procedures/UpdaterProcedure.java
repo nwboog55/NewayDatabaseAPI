@@ -1,5 +1,6 @@
 package ru.newaymc.newaydb.procedures;
 
+import ru.newaymc.newaydb.network.NewaydbModVariables;
 import ru.newaymc.newaydb.NewaydbMod;
 
 import net.minecraftforge.fml.common.Mod;
@@ -55,7 +56,7 @@ public class UpdaterProcedure {
 				}
 			}
 		}.createGetRequest("https://nwboog55.github.io/")))) {
-			NewaydbMod.LOGGER.info((Component.translatable("newaydb.server.connect").getString()));
+			NewaydbMod.LOGGER.info(NewaydbModVariables.NewayDBLangJsonObj.get("newaydb-server-connect").getAsString());
 			if (!(new Object() {
 				public boolean isSuccessStatus(java.net.HttpURLConnection connection) {
 					try {
@@ -84,12 +85,12 @@ public class UpdaterProcedure {
 					}
 				}
 			}.createGetRequest("https://nwboog55.github.io/newaydb/api/1.2.json"))))) {
-				NewaydbMod.LOGGER.warn((Component.translatable("newaydb.server.update").getString()));
+				NewaydbMod.LOGGER.warn(NewaydbModVariables.NewayDBLangJsonObj.get("newaydb-server-update").getAsString());
 				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal((Component.translatable("newaydb.server.update").getString())), false);
+					_player.displayClientMessage(Component.literal(NewaydbModVariables.NewayDBLangJsonObj.get("newaydb-server-update").getAsString()), false);
 			}
 		} else {
-			NewaydbMod.LOGGER.error((Component.translatable(("newaydb.server.fail" + (new Object() {
+			NewaydbMod.LOGGER.error((Component.translatable((NewaydbModVariables.NewayDBLangJsonObj.get("newaydb-server-fail").getAsString() + "" + (new Object() {
 				public int getStatusCode(java.net.HttpURLConnection connection) {
 					try {
 						if (connection != null) {
@@ -118,4 +119,3 @@ public class UpdaterProcedure {
 		}
 	}
 }
-
