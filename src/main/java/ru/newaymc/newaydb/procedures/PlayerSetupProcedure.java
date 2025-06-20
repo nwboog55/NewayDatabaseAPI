@@ -37,13 +37,33 @@ public class PlayerSetupProcedure {
 		}
 		NewaydbModVariables.NewayDBSettingsJsonObj.addProperty("force-world-save", true);
 		NewaydbModVariables.NewayDBSettingsJsonObj.addProperty("world", "");
-		NewaydbModVariables.NewayDBSettingsJsonObj.addProperty("toggle-backup", true);
-		NewaydbModVariables.NewayDBSettingsJsonObj.addProperty("lang", "en_us");
 		{
 			com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 			try {
 				FileWriter fileWriter = new FileWriter(NewaydbModVariables.NewayDBSettingsFile);
 				fileWriter.write(mainGSONBuilderVariable.toJson(NewaydbModVariables.NewayDBSettingsJsonObj));
+				fileWriter.close();
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+		}
+		NewaydbModVariables.NewayDBLangFile = new File((FMLPaths.GAMEDIR.get().toString() + "/NewayMC/NewayDB/Language/"), File.separator + "lang.json");
+		if (!NewaydbModVariables.NewayDBLangFile.exists()) {
+			try {
+				NewaydbModVariables.NewayDBLangFile.getParentFile().mkdirs();
+				NewaydbModVariables.NewayDBLangFile.createNewFile();
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+		}
+		NewaydbModVariables.NewayDBLangJsonObj.addProperty("newaydb-server-connect", "[NewayDB] The connection to the server has been successfully established.");
+		NewaydbModVariables.NewayDBLangJsonObj.addProperty("newaydb-server-fail", "[NewayDB] The connection to the server was not established. Error code:");
+		NewaydbModVariables.NewayDBLangJsonObj.addProperty("newaydb-server-update", "[NewayDB] You have an outdated version of the mod installed. Please update to the latest version of the mod.");
+		{
+			com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
+			try {
+				FileWriter fileWriter = new FileWriter(NewaydbModVariables.NewayDBLangFile);
+				fileWriter.write(mainGSONBuilderVariable.toJson(NewaydbModVariables.NewayDBLangJsonObj));
 				fileWriter.close();
 			} catch (IOException exception) {
 				exception.printStackTrace();
